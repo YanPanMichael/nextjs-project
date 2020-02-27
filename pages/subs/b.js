@@ -1,3 +1,6 @@
-import Comp from '../../components/comp.jsx'
+import { withRouter } from "next/router";
+import Comp from "../../components/comp.jsx";
 
-export default () => <Comp>B</Comp>
+const B = ({ router }) => <Comp>B {router.query.id}</Comp>;
+
+export default withRouter(B);
