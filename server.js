@@ -20,6 +20,16 @@ app.prepare().then(() => {
   //   ctx.set("Context-Type", "application/json");
   // });
 
+  router.get("/subs/b/:id", async ctx => {
+    const id = ctx.params.id;
+    await handle(ctx.req, ctx.res, {
+      pathname: "/subs/b",
+      query: { id }
+    })
+    ctx.respond = false;
+  });
+  
+  server.use(router.routes());
   server.use(async (ctx, next) => {
     await handle(ctx.req, ctx.res);
     ctx.respond = false;
