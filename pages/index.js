@@ -5,6 +5,25 @@ import Router from "next/router";
 
 import "../css/index.css";
 
+const events = [
+  'routeChangeStart',
+  'routeChangeComplete',
+  'routeChnageError',
+  'beforeHistoryChange',
+  'hashChangeStart',
+  'hashChangeComplete'
+]
+
+function makeEvent(event) {
+  return (...args) => {
+    console.log(event, ...args)
+  }
+}
+
+events.forEach(event => {
+  Router.events.on(event, makeEvent(event))
+})
+
 export default () => {
   function handleRouter() {
     Router.push(
