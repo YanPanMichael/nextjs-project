@@ -6,23 +6,23 @@ import Router from "next/router";
 import "../css/index.css";
 
 const events = [
-  'routeChangeStart',
-  'routeChangeComplete',
-  'routeChnageError',
-  'beforeHistoryChange',
-  'hashChangeStart',
-  'hashChangeComplete'
-]
+  "routeChangeStart",
+  "routeChangeComplete",
+  "routeChnageError",
+  "beforeHistoryChange",
+  "hashChangeStart",
+  "hashChangeComplete"
+];
 
 function makeEvent(event) {
   return (...args) => {
-    console.log(event, ...args)
-  }
+    console.log(event, ...args);
+  };
 }
 
 events.forEach(event => {
-  Router.events.on(event, makeEvent(event))
-})
+  Router.events.on(event, makeEvent(event));
+});
 
 export default () => {
   function handleRouter() {
@@ -40,10 +40,12 @@ export default () => {
   return (
     <>
       {/* as的加入只是更改地址显示 刷新会出现问题，因为这种方式只是浏览器显示映射而已，浏览器内部并没有这个路径，解决方法是Koa router加入映射配置 */}
-      <Link href="/a?id=1" as="/a/1" title="jump to A">
+      {/* <Link href="/a?id=1" as="/a/1" title="jump to A">
         <Button>Jump to A page</Button>
       </Link>
-      <Button onClick={handleRouter}>Jump to B page</Button>
+      <Button onClick={handleRouter}>Jump to B page</Button> */}
+
+      <span>index</span>
     </>
   );
 };
