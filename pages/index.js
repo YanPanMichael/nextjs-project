@@ -2,6 +2,7 @@
 import { Button } from "antd";
 import Link from "next/link";
 import Router from "next/router";
+import Head from "next/head"
 
 import "../css/index.css";
 

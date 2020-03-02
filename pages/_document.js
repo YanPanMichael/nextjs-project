@@ -13,7 +13,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>My Doucment</title>
           <style>{`.test { color: red }`}</style>
         </Head>
         <body className="test">
